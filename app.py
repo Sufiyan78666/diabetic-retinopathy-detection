@@ -106,10 +106,23 @@ class DRModel(nn.Module):
 
 @st.cache_resource(show_spinner=False)
 def load_model():
-    m = DRModel()
-    m.load_state_dict(torch.load("best_model.pth", map_location="cpu"))
-    m.eval()
-    return m
+    try:
+        m = DRModel()
+        state = torch.load(
+            "best_model.pth",
+            map_location=torch.device("cpu"),
+            weights_only=False
+        )
+        if isinstance(state, dict) and "model_state_dict" in state:
+            state = state["model_state_dict"]
+        elif isinstance(state, dict) and "state_dict" in state:
+            state = state["state_dict"]
+        m.load_state_dict(state, strict=False)
+        m.eval()
+        return m
+    except Exception as e:
+        st.error(f"Model loading failed: {e}")
+        return None
 
 
 # ─────────────────────────────────────────────
