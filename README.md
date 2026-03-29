@@ -11,6 +11,7 @@ from retinal fundus images using EfficientNet-B0.
 - **Dataset**: APTOS 2019 Blindness Detection (Kaggle)
 - **Classes**: No DR, Mild, Moderate, Severe, Proliferative DR
 - **Explainability**: Grad-CAM heatmaps
+- **Deployment**: Docker on Hugging Face Spaces
 
 ## Results
 | Metric | Score |
@@ -23,6 +24,8 @@ from retinal fundus images using EfficientNet-B0.
 pip install -r requirements.txt
 streamlit run app.py
 ```
+## Tech Stack
+Python · PyTorch · Streamlit · OpenCV · Grad-CAM
 
 ## Project Structure
 ```
