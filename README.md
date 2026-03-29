@@ -4,7 +4,7 @@ A deep learning web app that detects diabetic retinopathy severity
 from retinal fundus images using EfficientNet-B0.
 
 ## Demo
-[Live App](your-streamlit-or-huggingface-link-here)
+[Live App](https://huggingface.co/spaces/sufiyan78666/diabetic-retinopathy-detection)
 
 ## About
 - **Model**: EfficientNet-B0 (transfer learning)
