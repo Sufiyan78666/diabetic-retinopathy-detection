@@ -2,7 +2,7 @@ streamlit
 torch
 torchvision
 timm
-opencv-python
+opencv-python-headless
+Pillow
 numpy
-pillow
-grad-cam
+pytorch-grad-cam
